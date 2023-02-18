@@ -5,3 +5,4 @@
 *.properties
 target/classes/META-INF/maven/onlineAppV001_Cucumber/onlineAppV001_Cucumber/pom.xml
 *.class
+*.xml
