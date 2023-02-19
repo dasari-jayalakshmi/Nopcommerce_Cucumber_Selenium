@@ -23,9 +23,17 @@ Feature: Login
   @tag1
   Scenario: Successful Login with Valid Credentials
     Given User Launch Chrome browser
-    When User opens URL "https://www.nopcommerce.com/en/login?returnUrl=%2Fen%2Fpassword-recovery"
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
     And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
     And Click on Login
-    Then Page Title should be "Dashboard"
+    Then Page Title should be "My Orders"
+    
+  @tag2
+  Scenario: Unsuccessful Login with in valid Credentials
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and wrong Password as "WrongPassword"
+    And Click on Login
+    Then It should display error message
 
 
