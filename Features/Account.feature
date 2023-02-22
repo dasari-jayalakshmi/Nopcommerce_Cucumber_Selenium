@@ -52,7 +52,7 @@ Feature: Account Page
     And Click on Login
     Then I can able to see first tab name as "Desktops"
     
-    @IntegrationTest @UnitTest
+    @IntegrationTest @UnitTest @SITTest
     Scenario: It should have Newsletter link
     Given User Launch Chrome browser
     When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
@@ -70,7 +70,7 @@ Feature: Account Page
     Then I can able to see Returns link
     
     
-    @IntegrationTest @UnitTest
+    @IntegrationTest @UnitTest @SITTest
     Scenario: It should have Logout link
     Given User Launch Chrome browser
     When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
@@ -78,7 +78,7 @@ Feature: Account Page
     And Click on Login
     Then I can able to see Logout link
     
-    @IntegrationTest @UnitTest @UAT
+    @IntegrationTest @UnitTest @UATTest
     Scenario: validate logout link
     Given User Launch Chrome browser
     When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"

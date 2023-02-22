@@ -49,32 +49,32 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels: ["@Account","@Home","@IntegrationTest","@Login","@SanityTest","@UnitTest"],
+        labels: ["@Account","@Home","@IntegrationTest","@Login","@SITTest","@SanityTest","@UATTest","@UnitTest"],
         datasets: [
             {
                 label: 'Passed',
                 backgroundColor: "#92DD96",
-                data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00]
+                data: [100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00]
             },
             {
                 label: 'Failed',
                 backgroundColor: "#F2928C",
-                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
             },
             {
                 label: 'Skipped',
                 backgroundColor: "#8AF",
-                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
             },
             {
                 label: 'Pending',
                 backgroundColor: "#F5F28F",
-                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
             },
             {
                 label: 'Undefined',
                 backgroundColor: "#F5B975",
-                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
+                data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
             }
         ]
     };
@@ -135,7 +135,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>onlineAppV001_Cucumber</td>
                           <td>1</td>
-                        <td>21 Feb 2023, 11:08</td>
+                        <td>22 Feb 2023, 21:57</td>
           </tr>
         </tbody>
       </table>
@@ -194,16 +194,16 @@ $(document).ready(function() {
           <tr>
         <td class="tagname"><a href="Account.html">@Account</a></td>
         
-        <td  class="passed"    >6</td>
+        <td  class="passed"    >10</td>
         <td >0</td>
-        <td class="total">6</td>
-        <td      class="passed"    >30</td>
-        <td >0</td>
-        <td >0</td>
+        <td class="total">10</td>
+        <td      class="passed"    >54</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">30</td>
-        <td class="duration" data-value="57093839000">57s 093ms</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">54</td>
+        <td class="duration" data-value="92372032000">1m 32s 372ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
@@ -218,22 +218,22 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">15</td>
-        <td class="duration" data-value="29439688000">29s 439ms</td>
+        <td class="duration" data-value="27101875000">27s 101ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
         <td class="tagname"><a href="IntegrationTest.html">@IntegrationTest</a></td>
         
-        <td  class="passed"    >10</td>
+        <td  class="passed"    >14</td>
         <td >0</td>
-        <td class="total">10</td>
-        <td      class="passed"    >50</td>
-        <td >0</td>
-        <td >0</td>
+        <td class="total">14</td>
+        <td      class="passed"    >74</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">50</td>
-        <td class="duration" data-value="96017604000">1m 36s 017ms</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">74</td>
+        <td class="duration" data-value="128629044000">2m 8s 629ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
@@ -248,7 +248,22 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">10</td>
-        <td class="duration" data-value="18645772000">18s 645ms</td>
+        <td class="duration" data-value="19119299000">19s 119ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="SITTest.html">@SITTest</a></td>
+        
+        <td  class="passed"    >2</td>
+        <td >0</td>
+        <td class="total">2</td>
+        <td      class="passed"    >10</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">10</td>
+        <td class="duration" data-value="17758871000">17s 758ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
@@ -263,39 +278,54 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">25</td>
-        <td class="duration" data-value="48378135000">48s 378ms</td>
+        <td class="duration" data-value="45008394000">45s 008ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="UATTest.html">@UATTest</a></td>
+        
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+        <td      class="passed"    >9</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">9</td>
+        <td class="duration" data-value="11567989000">11s 567ms</td>
         <td class="passed">Passed</td>
       </tr>
           <tr>
         <td class="tagname"><a href="UnitTest.html">@UnitTest</a></td>
         
-        <td  class="passed"    >11</td>
+        <td  class="passed"    >15</td>
         <td >0</td>
-        <td class="total">11</td>
-        <td      class="passed"    >55</td>
-        <td >0</td>
-        <td >0</td>
+        <td class="total">15</td>
+        <td      class="passed"    >79</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">55</td>
-        <td class="duration" data-value="105179299000">1m 45s 179ms</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">79</td>
+        <td class="duration" data-value="138593206000">2m 18s 593ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>6</td>
-            <td>37</td>
+      <td>8</td>
+            <td>52</td>
       <td>0</td>
-      <td>37</td>
-      <td>185</td>
-      <td>0</td>
-      <td>0</td>
+      <td>52</td>
+      <td>276</td>
       <td>0</td>
       <td>0</td>
-      <td>185</td>
-      <td class="duration">5m 54s 754ms</td>
+      <td>0</td>
+      <td>0</td>
+      <td>276</td>
+      <td class="duration">8m 150ms</td>
       <td></td>
     </tr>
     <tr>

@@ -57,8 +57,6 @@ public class Steps {
 	public void user_enters_email_as_and_wrong_password_as(String email, String password) {
 		loginPage.setUserEmailAddress(email);
 		loginPage.setPassword(password);
-		driver.close();
-
 	}
 
 	@Then("It should display error message")
