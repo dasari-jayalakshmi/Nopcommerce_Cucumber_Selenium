@@ -69,4 +69,25 @@ Feature: Account Page
     And Click on Login
     Then I can able to see Returns link
     
+    
+    @IntegrationTest @UnitTest
+    Scenario: It should have Logout link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Logout link
+    
+    @IntegrationTest @UnitTest @UAT
+    Scenario: validate logout link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Logout link
+    And Click on Logout
+    Then I can able to see Confirm Message
+    And Click on continue
+    Then I can not see logout link
+    
 

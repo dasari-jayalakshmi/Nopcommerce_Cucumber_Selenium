@@ -42,6 +42,17 @@ public WebDriver driver;
 	@CacheLookup
 	WebElement returnsLink;
 	
+	@FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Logout']")
+	@CacheLookup
+	WebElement logoutLink;
+	
+	@FindBy(xpath="//p[contains(text(),'Your shopping cart has been saved, the items insid')]")
+	@CacheLookup
+	WebElement logoutConfirmMessage;
+	
+	@FindBy(xpath="//a[@class='btn btn-primary']")
+	@CacheLookup
+	WebElement continueLogout;
 	
 	
 	public boolean isAccountContainerVisible() {
@@ -73,5 +84,29 @@ public WebDriver driver;
    
 }
 
+	public boolean isLogoutConfirmMessageVisible() {
+		return continueLogout.isDisplayed();
+	}
 
+	public void clickLogout() {
+		logoutLink.click();
+	}
+	
+
+	public boolean isLogoutLinkVisible() {
+		return logoutLink.isDisplayed();
+	}
+	
+	public void clickLogoutContinue() {
+		continueLogout.click();
+	}
+	
+	public boolean validateLogout() {
+		 logoutLink.click();
+		 return logoutConfirmMessage.isDisplayed();
+	}
+	
+	public String getUrl() {
+		return driver.getCurrentUrl();
+	}
 }

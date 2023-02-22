@@ -18,7 +18,8 @@ public class Steps {
 	WebDriver driver;
 	public LoginPage loginPage;
 	public HomePage homePage;
-    public AccountPage accountPage;
+	public AccountPage accountPage;
+
 	@Given("User Launch Chrome browser")
 	public void user_launch_chrome_browser() {
 		WebDriverManager.chromedriver().setup();
@@ -49,19 +50,23 @@ public class Steps {
 		String title = loginPage.getHomePageMyOrdersLabelText();
 		Boolean match = title.equalsIgnoreCase(text);
 		Assert.assertTrue(match);
+		driver.close();
 	}
 
 	@When("User enters Email as {string} and wrong Password as {string}")
 	public void user_enters_email_as_and_wrong_password_as(String email, String password) {
 		loginPage.setUserEmailAddress(email);
 		loginPage.setPassword(password);
+		driver.close();
+
 	}
 
 	@Then("It should display error message")
 	public void it_should_display_error_message() {
 		Boolean alertDisplayed = loginPage.isAlertMessageDisplayed();
 		Assert.assertTrue(alertDisplayed);
-		driver.quit();
+		driver.close();
+
 	}
 
 	// Home feature steps
@@ -70,7 +75,8 @@ public class Steps {
 	public void i_can_able_to_see_tabs_on_my_home_page(String numberOfTabs) {
 		int tabsCount = homePage.getTotalNumberOfTabs();
 		Assert.assertEquals(String.valueOf(tabsCount), numberOfTabs);
-		 
+		driver.close();
+
 	}
 
 	@Then("I can able to see first tab name as {string}")
@@ -86,9 +92,8 @@ public class Steps {
 		Assert.assertEquals(name, string);
 		driver.close();
 	}
-	
-	
-	//Account feature steps
+
+	// Account feature steps
 	@Then("I can able to see account container")
 	public void i_can_able_to_see_account_container() {
 		Assert.assertTrue(accountPage.isAccountContainerVisible());
@@ -116,25 +121,60 @@ public class Steps {
 	@Then("I can able to see Modify your wish list link")
 	public void i_can_able_to_see_modify_your_wish_list_link() {
 		Assert.assertTrue(accountPage.isModifyWishLinkVisible());
-		driver.close();	}
-	
+		driver.close();
+	}
+
 	@Then("I can able to see Newsletter link")
 	public void i_can_able_to_see_newsletter_link() {
 		Assert.assertTrue(accountPage.isNewsletterLinkVisible());
 		driver.close();
 	}
-	
 
 	@Then("I can able to see Returns link")
 	public void i_can_able_to_see_Returns_link() {
 		Assert.assertTrue(accountPage.isReturnsLinkVisible());
 		driver.close();
 	}
+
+	@Then("I can able to see Logout link")
+	public void i_can_able_to_see_Logout_link() {
+		Assert.assertTrue(accountPage.isLogoutLinkVisible());
+	}
+
+
+	@Then("Click on Logout")
+	public void click_on_logout() {
+		accountPage.clickLogout();
+	}
+	
+	@Then("I can able to see Confirm Message")
+	public void i_can_able_to_see_confirm_message() {
+		Assert.assertTrue(accountPage.isLogoutConfirmMessageVisible());
+	}
+	
+	@Then("Click on continue")
+	public void click_on_continue() {
+	    accountPage.clickLogoutContinue();
+	}
+	
+	@Then("I can not see logout link")
+	public void i_can_not_see_logout_link() throws InterruptedException {
+		boolean match = accountPage.getUrl().equalsIgnoreCase("http://tutorialsninja.com/demo/index.php?route=common/home");
+	    Assert.assertTrue(match);
+		driver.close();
+	}
+
+
+
+	
+	
+	
+	
+
 	@AfterMethod
-	public void closeBrowser()
-	{
+	public void closeBrowser() {
 		System.out.println("Closing browser");
 		driver.close();
 
-	} 
+	}
 }
