@@ -3,6 +3,7 @@ package stepDefinitions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -76,13 +77,14 @@ public class Steps {
 	public void i_can_able_to_see_first_tab_name_as(String string) {
 		String name = homePage.getFirstTabName();
 		Assert.assertEquals(name, string);
+		driver.close();
 	}
 
 	@Then("I can able to see second tab name as {string}")
 	public void i_can_able_to_see_second_tab_name_as(String string) {
 		String name = homePage.getSecondTabName();
 		Assert.assertEquals(name, string);
-		driver.quit();
+		driver.close();
 	}
 	
 	
@@ -90,26 +92,49 @@ public class Steps {
 	@Then("I can able to see account container")
 	public void i_can_able_to_see_account_container() {
 		Assert.assertTrue(accountPage.isAccountContainerVisible());
+		driver.close();
 	}
 
 	@Then("I can able to see Edit your account information link")
 	public void i_can_able_to_see_edit_your_account_information_link() {
 		Assert.assertTrue(accountPage.isEditAccountLinkVisible());
+		driver.close();
 	}
 
 	@Then("I can able to see Change your password link")
 	public void i_can_able_to_see_change_your_password_link() {
 		Assert.assertTrue(accountPage.isChangePasswordLinkVisible());
+		driver.close();
 	}
 
 	@Then("I can able to see Modify your address book entries link")
 	public void i_can_able_to_see_modify_your_address_book_entries_link() {
 		Assert.assertTrue(accountPage.isModifyAddressLinkVisible());
+		driver.close();
 	}
 
 	@Then("I can able to see Modify your wish list link")
 	public void i_can_able_to_see_modify_your_wish_list_link() {
 		Assert.assertTrue(accountPage.isModifyWishLinkVisible());
-		driver.quit();
+		driver.close();	}
+	
+	@Then("I can able to see Newsletter link")
+	public void i_can_able_to_see_newsletter_link() {
+		Assert.assertTrue(accountPage.isNewsletterLinkVisible());
+		driver.close();
 	}
+	
+
+	@Then("I can able to see Returns link")
+	public void i_can_able_to_see_Returns_link() {
+		Assert.assertTrue(accountPage.isReturnsLinkVisible());
+		driver.close();
+	}
+	@AfterMethod
+	public void closeBrowser()
+	{
+		System.out.println("Closing browser");
+		driver.close();
+
+	} 
 }

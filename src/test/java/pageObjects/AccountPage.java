@@ -34,6 +34,16 @@ public WebDriver driver;
 	@CacheLookup
 	WebElement modifyWishListLink;
 	
+	@FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Newsletter']")
+	@CacheLookup
+	WebElement newsLetterLink;
+	
+	@FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Returns']")
+	@CacheLookup
+	WebElement returnsLink;
+	
+	
+	
 	public boolean isAccountContainerVisible() {
 		return accountContainer.isDisplayed();
 	}
@@ -53,5 +63,15 @@ public WebDriver driver;
 	public boolean isModifyWishLinkVisible() {
 		return modifyWishListLink.isDisplayed();
 	}
+	
+	public boolean isNewsletterLinkVisible() {
+		return newsLetterLink.isDisplayed();
+	}
+
+	public boolean isReturnsLinkVisible() {
+		return returnsLink.isDisplayed();
+   
+}
+
 
 }

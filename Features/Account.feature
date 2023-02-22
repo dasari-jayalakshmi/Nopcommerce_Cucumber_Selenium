@@ -52,6 +52,21 @@ Feature: Account Page
     And Click on Login
     Then I can able to see first tab name as "Desktops"
     
+    @IntegrationTest @UnitTest
+    Scenario: It should have Newsletter link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Newsletter link
     
+    
+    @IntegrationTest @UnitTest
+    Scenario: It should have Returns link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Returns link
     
 
