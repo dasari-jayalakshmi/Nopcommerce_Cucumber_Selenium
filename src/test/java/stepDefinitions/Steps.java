@@ -165,6 +165,33 @@ public class Steps {
 	}
 
 
+@Then("I can able to see Order History link")
+public void i_can_able_to_see_order_history_link() {
+    Assert.assertTrue(accountPage.isOrderHistoryLinkVisible());
+	driver.close(); 
+}
+
+@Then("I can able to see Reward Points link")
+public void i_can_able_to_see_reward_points_link() {
+	Assert.assertTrue(accountPage.isRewardPointsLinkVisible());
+	driver.close(); 
+} 
+
+@Then("I can able to see Address Book link")
+public void i_can_able_to_see_address_book_link() {
+	Assert.assertTrue(accountPage.isAddressBookLinkVisible());
+	driver.close(); 
+}
+
+
+@Then("I can able to see Items Add to cart link")
+public void i_can_able_to_see_items_add_to_cart_link() {
+	Assert.assertTrue(accountPage.isItemsAddtocardLinkVisible());
+	driver.close(); 
+}
+
+
+
 
 	
 	

@@ -54,6 +54,26 @@ public WebDriver driver;
 	@CacheLookup
 	WebElement continueLogout;
 	
+
+	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@CacheLookup
+	WebElement orderhistoryLink;
+	
+
+	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@CacheLookup
+	WebElement rewardhistoryLink;
+	
+
+	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@CacheLookup
+	WebElement itemsaddtocardLink;
+	
+
+	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@CacheLookup
+	WebElement addressbookLink;
+	
 	
 	public boolean isAccountContainerVisible() {
 		return accountContainer.isDisplayed();
@@ -108,5 +128,19 @@ public WebDriver driver;
 	
 	public String getUrl() {
 		return driver.getCurrentUrl();
+	}
+	
+	public boolean isOrderHistoryLinkVisible() {
+		return orderhistoryLink.isDisplayed();
+	}
+
+	public boolean isRewardPointsLinkVisible() {
+		return rewardhistoryLink.isDisplayed();
+	}
+	public boolean isItemsAddtocardLinkVisible() {
+		return itemsaddtocardLink.isDisplayed();
+	}
+	public boolean isAddressBookLinkVisible() {
+		return addressbookLink.isDisplayed();
 	}
 }

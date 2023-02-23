@@ -90,4 +90,36 @@ Feature: Account Page
     And Click on continue
     Then I can not see logout link
     
+    
+    @IntegrationTest @UnitTest
+    Scenario: It should have Order History link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Order History link
+    
+    @IntegrationTest @UnitTest
+    Scenario: It should have Reward Points link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Reward Points link
 
+    @IntegrationTest @UnitTest
+    Scenario: It should have Items Add to cart link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Items Add to cart link
+    
+    
+    @IntegrationTest @UnitTest
+    Scenario: It should have Address Book link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Address Book link
