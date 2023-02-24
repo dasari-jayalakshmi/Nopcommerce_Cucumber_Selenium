@@ -192,12 +192,6 @@ public void i_can_able_to_see_items_add_to_cart_link() {
 
 
 
-
-	
-	
-	
-	
-
 	@AfterMethod
 	public void closeBrowser() {
 		System.out.println("Closing browser");

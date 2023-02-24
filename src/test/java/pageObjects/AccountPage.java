@@ -55,22 +55,22 @@ public WebDriver driver;
 	WebElement continueLogout;
 	
 
-	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Order History']")
 	@CacheLookup
 	WebElement orderhistoryLink;
 	
 
-	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@FindBy(xpath="//a[normalize-space()='Reward Points']")
 	@CacheLookup
 	WebElement rewardhistoryLink;
 	
 
-	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@FindBy(xpath="//button[@class='btn btn-inverse btn-block btn-lg dropdown-toggle']")
 	@CacheLookup
 	WebElement itemsaddtocardLink;
 	
 
-	@FindBy(xpath="@FindBy(xpath=\"//a[@class='btn btn-primary']\")")
+	@FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Address Book']")
 	@CacheLookup
 	WebElement addressbookLink;
 	
