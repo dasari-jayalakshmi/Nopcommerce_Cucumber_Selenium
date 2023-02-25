@@ -38,6 +38,9 @@ public class HomePage {
 	@CacheLookup
 	WebElement tabs;
 
+	@FindBy(xpath="//a[normalize-space()='Cameras']")
+	@CacheLookup
+	WebElement camerasTab;
 	
 	public int getTotalNumberOfTabs() {
 	    List<WebElement> buttons = driver.findElements(By.cssSelector(".navbar ul.navbar-nav li.dropdown"));
@@ -51,5 +54,9 @@ public class HomePage {
 
 	public String getSecondTabName() {
 		return secondTab.getText();
+	}
+	
+	public void clickOnCamerasTab() {
+		 camerasTab.click();
 	}
 }
