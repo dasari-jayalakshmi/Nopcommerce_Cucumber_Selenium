@@ -74,6 +74,11 @@ public WebDriver driver;
 	@CacheLookup
 	WebElement addressbookLink;
 	
+
+	@FindBy(xpath="//a[@class='list-group-item'][normalize-space()='Wish List']")
+	@CacheLookup
+	WebElement wishlistLink;
+	
 	
 	public boolean isAccountContainerVisible() {
 		return accountContainer.isDisplayed();
@@ -142,5 +147,8 @@ public WebDriver driver;
 	}
 	public boolean isAddressBookLinkVisible() {
 		return addressbookLink.isDisplayed();
+	}
+	public boolean isWishListLinkVisible() {
+		return wishlistLink.isDisplayed();
 	}
 }

@@ -191,7 +191,13 @@ public class Steps {
 		driver.close();
 	}
 
-// Cameras feature
+	@Then("I can able to see Wish List link")
+	public void i_can_able_to_see_wish_list_link() {
+		Assert.assertTrue(accountPage.isWishListLinkVisible());
+		driver.close();
+	}
+
+	// Cameras feature
 
 	@Then("Click on Cameras")
 	public void click_on_cameras() {
