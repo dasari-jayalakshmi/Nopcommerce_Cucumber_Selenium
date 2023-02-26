@@ -10,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.AccountPage;
+import pageObjects.CamerasPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
@@ -19,6 +20,7 @@ public class Steps {
 	public LoginPage loginPage;
 	public HomePage homePage;
 	public AccountPage accountPage;
+	public CamerasPage camerasPage;
 
 	@Given("User Launch Chrome browser")
 	public void user_launch_chrome_browser() {
@@ -27,6 +29,7 @@ public class Steps {
 		loginPage = new LoginPage(driver);
 		homePage = new HomePage(driver);
 		accountPage = new AccountPage(driver);
+		camerasPage = new CamerasPage(driver);
 	}
 
 	@When("User opens URL {string}")
@@ -141,68 +144,80 @@ public class Steps {
 		Assert.assertTrue(accountPage.isLogoutLinkVisible());
 	}
 
-
 	@Then("Click on Logout")
 	public void click_on_logout() {
 		accountPage.clickLogout();
 	}
-	
+
 	@Then("I can able to see Confirm Message")
 	public void i_can_able_to_see_confirm_message() {
 		Assert.assertTrue(accountPage.isLogoutConfirmMessageVisible());
 	}
-	
+
 	@Then("Click on continue")
 	public void click_on_continue() {
-	    accountPage.clickLogoutContinue();
+		accountPage.clickLogoutContinue();
 	}
-	
+
 	@Then("I can not see logout link")
 	public void i_can_not_see_logout_link() throws InterruptedException {
-		boolean match = accountPage.getUrl().equalsIgnoreCase("http://tutorialsninja.com/demo/index.php?route=common/home");
-	    Assert.assertTrue(match);
+		boolean match = accountPage.getUrl()
+				.equalsIgnoreCase("http://tutorialsninja.com/demo/index.php?route=common/home");
+		Assert.assertTrue(match);
 		driver.close();
 	}
 
-
-@Then("I can able to see Order History link")
-public void i_can_able_to_see_order_history_link() {
-    Assert.assertTrue(accountPage.isOrderHistoryLinkVisible());
-	driver.close(); 
-}
-
-@Then("I can able to see Reward Points link")
-public void i_can_able_to_see_reward_points_link() {
-	Assert.assertTrue(accountPage.isRewardPointsLinkVisible());
-	driver.close(); 
-} 
-
-@Then("I can able to see Address Book link")
-public void i_can_able_to_see_address_book_link() {
-	Assert.assertTrue(accountPage.isAddressBookLinkVisible());
-	driver.close(); 
-}
-
-
-@Then("I can able to see Items Add to cart link")
-public void i_can_able_to_see_items_add_to_cart_link() {
-	Assert.assertTrue(accountPage.isItemsAddtocardLinkVisible());
-	driver.close(); 
-}
-
-
-@Then("I can able to see Wish List link")
-public void i_can_able_to_see_wish_list_link() {
-	Assert.assertTrue(accountPage.isWishListLinkVisible());
-	driver.close(); 
-}
-
-
-
-	@AfterMethod
-	public void closeBrowser() {
-		System.out.println("Closing browser");
+	@Then("I can able to see Order History link")
+	public void i_can_able_to_see_order_history_link() {
+		Assert.assertTrue(accountPage.isOrderHistoryLinkVisible());
 		driver.close();
-
 	}
+
+	@Then("I can able to see Reward Points link")
+	public void i_can_able_to_see_reward_points_link() {
+		Assert.assertTrue(accountPage.isRewardPointsLinkVisible());
+		driver.close();
+	}
+
+	@Then("I can able to see Address Book link")
+	public void i_can_able_to_see_address_book_link() {
+		Assert.assertTrue(accountPage.isAddressBookLinkVisible());
+		driver.close();
+	}
+
+	@Then("I can able to see Items Add to cart link")
+	public void i_can_able_to_see_items_add_to_cart_link() {
+		Assert.assertTrue(accountPage.isItemsAddtocardLinkVisible());
+		driver.close();
+	}
+
+	@Then("I can able to see Wish List link")
+	public void i_can_able_to_see_wish_list_link() {
+		Assert.assertTrue(accountPage.isWishListLinkVisible());
+		driver.close();
+	}
+
+	// Cameras feature
+
+	@Then("Click on Cameras")
+	public void click_on_cameras() {
+		homePage.clickOnCamerasTab();
+	}
+
+	@Then("I can able to see Camera page view")
+	public void i_can_able_to_see_camera_page_view() {
+		Assert.assertTrue(camerasPage.isCamerasPageViewVisible());
+	}
+
+	@Then("Click on Canon EOS 5D")
+	public void click_on_canon_eos_5d() {
+		camerasPage.clickOnCanon();
+	}
+
+	@Then("it should show Camera details view")
+	public void it_should_show_camera_details_view() {
+		Assert.assertTrue(camerasPage.isCanonViewVisible());
+		driver.close();
+	}
+
 }
