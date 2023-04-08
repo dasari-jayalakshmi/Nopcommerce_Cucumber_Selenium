@@ -141,3 +141,19 @@ Feature: Account Page
     And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
     And Click on Login
     Then I can able to see Edit Account link
+    
+    @IntegrationTest @UnitTest @Tablets
+    Scenario: It should have Tablets link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Tablets link
+    
+    @IntegrationTest @UnitTest @Phones
+    Scenario: It should have Phones link
+    Given User Launch Chrome browser
+    When User opens URL "http://tutorialsninja.com/demo/index.php?route=account/login"
+    And User enters Email as "dasari.jayalakshmi17@gmail.com" and Password as "Test12345"
+    And Click on Login
+    Then I can able to see Phones link

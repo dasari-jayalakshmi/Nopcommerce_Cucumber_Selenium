@@ -13,6 +13,8 @@ import pageObjects.AccountPage;
 import pageObjects.CamerasPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
+import pageObjects.PhonesPage;
+import pageObjects.TabletsPage;
 
 public class Steps {
 
@@ -21,7 +23,8 @@ public class Steps {
 	public HomePage homePage;
 	public AccountPage accountPage;
 	public CamerasPage camerasPage;
-
+	public TabletsPage tabletsPage;
+    public PhonesPage phonesPage;
 	@Given("User Launch Chrome browser")
 	public void user_launch_chrome_browser() {
 		WebDriverManager.chromedriver().setup();
@@ -30,6 +33,8 @@ public class Steps {
 		homePage = new HomePage(driver);
 		accountPage = new AccountPage(driver);
 		camerasPage = new CamerasPage(driver);
+		tabletsPage = new TabletsPage(driver);
+		phonesPage = new PhonesPage(driver);
 	}
 
 	@When("User opens URL {string}")
@@ -220,4 +225,15 @@ public class Steps {
 		driver.close();
 	}
 
+	@Then("I can able to see Tablets link")
+	public void i_can_able_to_see_tablets_link() {
+		Assert.assertTrue(tabletsPage.isSamsungGalaxyViewVisible());
+		driver.close();
+	}
+
+	@Then("I can able to see Phones link")
+	public void i_can_able_to_see_phones_link() {
+		Assert.assertTrue(phonesPage.isIphoneViewVisible());
+		driver.close();
+	}
 }

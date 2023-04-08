@@ -79,6 +79,9 @@ public WebDriver driver;
 	@CacheLookup
 	WebElement wishlistLink;
 	
+	@FindBy(xpath="//a[@class='list-group-item active']")
+	@CacheLookup
+	WebElement tabletsLink;
 	
 	public boolean isAccountContainerVisible() {
 		return accountContainer.isDisplayed();
@@ -150,5 +153,8 @@ public WebDriver driver;
 	}
 	public boolean isWishListLinkVisible() {
 		return wishlistLink.isDisplayed();
+	}
+	public boolean isTabletsLinkVisible() {
+		return tabletsLink.isDisplayed();
 	}
 }
