@@ -12,34 +12,49 @@ import org.openqa.selenium.support.PageFactory;
 public class CamerasPage {
 
 	public WebDriver driver;
-	
-	public CamerasPage(WebDriver driverObject){
+
+	public CamerasPage(WebDriver driverObject) {
 		this.driver = driverObject;
 		PageFactory.initElements(driverObject, this);
 	}
-	
-	@FindBy(xpath="//body/div[@id='product-category']/div[@class='row']/div[@id='content']/div[1]")
+
+	@FindBy(xpath = "//body/div[@id='product-category']/div[@class='row']/div[@id='content']/div[1]")
 	@CacheLookup
 	WebElement camerasContainer;
-	
-	@FindBy(xpath="//a[normalize-space()='Canon EOS 5D']")
+
+	@FindBy(xpath = "//a[normalize-space()='Canon EOS 5D']")
 	@CacheLookup
 	WebElement canonLink;
-	
-	
-    @FindBy(xpath="(//a[@title='Canon EOS 5D'])[1]")
-    @CacheLookup
+
+	@FindBy(xpath = "(//a[@title='Canon EOS 5D'])[1]")
+	@CacheLookup
 	WebElement canonUi;
-    
+
+	@FindBy(xpath = "//a[normalize-space()='Nikon D300']")
+	@CacheLookup
+	WebElement nikonLink;
+
+	@FindBy(xpath = "//img[@title='Nikon D300")
+	@CacheLookup
+	WebElement nikonUi;
+
 	public Boolean isCamerasPageViewVisible() {
 		return camerasContainer.isDisplayed();
 	}
-	
+
 	public void clickOnCanon() {
-		 canonLink.click();
+		canonLink.click();
 	}
-	
+
 	public Boolean isCanonViewVisible() {
 		return canonUi.isDisplayed();
+	}
+
+	public void clickOnNikon() {
+		nikonLink.click();
+	}
+
+	public Boolean isNikonViewVisible() {
+		return nikonUi.isDisplayed();
 	}
 }

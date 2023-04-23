@@ -236,4 +236,15 @@ public class Steps {
 		Assert.assertTrue(phonesPage.isIphoneViewVisible());
 		driver.close();
 	}
+	@Then("Click on Nikon D300")
+	public void click_on_nikon_D300() {
+		camerasPage.clickOnCanon();
+	}
+
+@Then("I can able to see Nikon Camera link")
+public void i_can_able_to_see_cameras_link() {
+	Assert.assertTrue(camerasPage.isNikonViewVisible());
+	driver.close(); 
+    
+}
 }
