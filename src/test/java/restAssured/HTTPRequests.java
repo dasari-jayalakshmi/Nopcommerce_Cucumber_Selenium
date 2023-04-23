@@ -38,4 +38,32 @@ public class HTTPRequests {
 		then().statusCode(201 );
 
 	}
+	
+
+	@Test
+	public void updateUsers() {
+
+		JSONObject request = new JSONObject();
+		request.put("first_name", "Dpas");
+		request.put("job", "Doctor");
+
+		given().
+		body(request.toJSONString()).
+		when().
+		put("https://reqres.in/api/users/2").
+		then().statusCode(200 );
+
+	}
+
+	@Test
+	public void deleteUsers() {
+
+		given().
+		when().
+		delete("https://reqres.in/api/users/userid").
+		then().statusCode(204 );
+	
+	}
+
+
 }
