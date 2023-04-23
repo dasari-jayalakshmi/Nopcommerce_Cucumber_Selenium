@@ -1,8 +1,13 @@
 package pageObjects;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -13,11 +18,11 @@ public class CamerasPage {
 
 	public WebDriver driver;
 
-	public CamerasPage(WebDriver driverObject) {
+	public CamerasPage(WebDriver driverObject) throws IOException {
 		this.driver = driverObject;
 		PageFactory.initElements(driverObject, this);
 	}
-
+	
 	@FindBy(xpath = "//body/div[@id='product-category']/div[@class='row']/div[@id='content']/div[1]")
 	@CacheLookup
 	WebElement camerasContainer;

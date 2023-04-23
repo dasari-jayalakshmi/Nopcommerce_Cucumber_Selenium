@@ -1,5 +1,8 @@
 package stepDefinitions;
 
+import java.io.IOException;
+import java.util.Date;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -15,6 +18,7 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.PhonesPage;
 import pageObjects.TabletsPage;
+import screenshot.ScreenShot;
 
 public class Steps {
 
@@ -24,9 +28,11 @@ public class Steps {
 	public AccountPage accountPage;
 	public CamerasPage camerasPage;
 	public TabletsPage tabletsPage;
-    public PhonesPage phonesPage;
+	public PhonesPage phonesPage;
+	public ScreenShot screenshot;
+
 	@Given("User Launch Chrome browser")
-	public void user_launch_chrome_browser() {
+	public void user_launch_chrome_browser() throws IOException {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		loginPage = new LoginPage(driver);
@@ -43,9 +49,11 @@ public class Steps {
 	}
 
 	@When("User enters Email as {string} and Password as {string}")
-	public void user_enters_email_as_and_password_as(String email, String password) {
+	public void user_enters_email_as_and_password_as(String email, String password) throws Exception {
 		loginPage.setUserEmailAddress(email);
 		loginPage.setPassword(password);
+		String path = "screenshots/"+ new Date()+".png";
+		ScreenShot.takeScreenShot(driver,path);
 	}
 
 	@When("Click on Login")
@@ -236,15 +244,16 @@ public class Steps {
 		Assert.assertTrue(phonesPage.isIphoneViewVisible());
 		driver.close();
 	}
+
 	@Then("Click on Nikon D300")
 	public void click_on_nikon_D300() {
 		camerasPage.clickOnCanon();
 	}
 
-@Then("I can able to see Nikon Camera link")
-public void i_can_able_to_see_cameras_link() {
-	Assert.assertTrue(camerasPage.isNikonViewVisible());
-	driver.close(); 
-    
-}
+	@Then("I can able to see Nikon Camera link")
+	public void i_can_able_to_see_cameras_link() {
+		Assert.assertTrue(camerasPage.isNikonViewVisible());
+		driver.close();
+
+	}
 }
